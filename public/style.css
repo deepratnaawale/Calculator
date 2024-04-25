@@ -1,0 +1,132 @@
+@keyframes gradientBackground {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: linear-gradient(135deg, rgb(109, 203, 235), rgb(190, 127, 190));
+    background-size: 200% 200%;
+    /* Increase background size to enable smooth gradient animation */
+    animation: gradientBackground 10s ease infinite;
+    /* Apply the animation */
+}
+
+
+h1 {
+    color: white;
+    /* White text color */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+    /* Subtle shadow for depth */
+    font-size: 2.5rem;
+    /* Larger size for the title */
+    font-family: 'Montserrat', Arial, sans-serif;
+    /* Modern font, with fallback to Arial */
+    margin-bottom: 20px;
+    /* Space between the title and the calculator */
+}
+
+#calculator {
+    width: 300px;
+    background-color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+#calculatorScreen {
+    width: 90%;
+    height: 30px;
+    /* Specify a height for the input */
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    /* Subtle border */
+    border-radius: 5px;
+    /* Rounded corners */
+    font-size: 1.5rem;
+    /* Larger font size for better visibility */
+    text-align: right;
+    /* Right-align the text */
+    outline: none;
+    /* Remove default focus outline */
+    transition: box-shadow 0.3s ease-in-out;
+    /* Smooth transition for the glow effect */
+
+}
+
+#calculatorScreen:focus {
+    box-shadow: inset 0 0 5px rgba(0, 123, 255, 0.8);
+    /* Blue glow */
+}
+
+.button-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+button {
+    width: 60px;
+    /* Ensuring width and height are equal */
+    height: 60px;
+    /* Equal width and height make a perfect circle */
+    padding: 10px;
+    margin: 5px;
+    border: none;
+    border-radius: 50%;
+    /* Circular shape */
+    background-color: #f1f1f1;
+    font-size: 16px;
+    color: #333;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+button:active,
+button.pressed {
+    background-color: #ccc;
+    /* Darker background on press for better visibility */
+    transform: scale(0.9);
+    /* Slight scale down to simulate button press */
+}
+
+button:hover {
+    background-color: #ddd;
+}
+
+button.backspace {
+    background-color: grey;
+    color: black;
+    /* Differentiate backspace button */
+}
+
+button.equals{
+    background-color: rgb(112, 208, 131);
+}
+button.clear {
+    background-color: darkred;
+    color: white;
+    /* Differentiate backspace button */
+}
+.active-operator {
+    background-color: #81b3ec;
+    /* Darker background for active state */
+    color: white;
+    /* Light text color for better contrast */
+}
